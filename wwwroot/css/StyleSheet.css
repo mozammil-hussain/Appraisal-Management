@@ -1,0 +1,66 @@
+﻿
+/*body {*/
+    /*background-image:url('../images/butter.');*/
+    
+    
+    /*background-image: url('../images/home.png');
+    background-size: cover;
+}*/
+.image .target img{
+    width:90px;
+    height:45px;
+    margin-left:20px;
+
+}
+
+body header .custom-css-for-navbar {
+    
+    /*background-color:grey;*/
+   
+    height:80px;
+
+    width:100%;
+    height:100%;
+    font-size:26px;
+   
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center;
+    color:aliceblue;
+    background-color:#f4f4f4;
+    border-bottom:2px solid white;
+}
+
+.custom-css-for-homepage {
+    width: 100vh;
+    height: 100vh;
+    font-family:Arial;
+    position: relative;
+    background-image: url('~/images/butter.jpg');
+    
+    
+    background-size: cover;
+}
+
+.custom-overlay {
+    width: 700px;
+    height: 600px;
+    font-size: 26px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    
+    border-radius: 10px;
+    margin-top: 70px;
+    
+}
+/*main.pb-3 {
+    display: flex;e
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}*/

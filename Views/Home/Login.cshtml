@@ -1,0 +1,42 @@
+﻿@model LoginDetails
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+
+@{
+    <h1>@ViewData["email"]</h1>
+    <h1>@ViewData["password"]</h1>
+}
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        @{
+            if (ViewBag.ErrorName != null)
+            {
+                <div class="text-danger">@ViewBag.ErrorName</div>
+            }
+        }
+
+        <form asp-action="Login" asp-controller="Home" method="post">
+            <input asp-for="user_name" id="login" class="fadeIn second" placeholder="User Name" required>
+            <br />
+            <span asp-validation-for="user_name" class="text-danger"></span>
+
+            <input asp-for="password" placeholder="Password" class="fadeIn third" required>
+            <br />
+
+            <span asp-validation-for="password" class="text-danger"></span>
+
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        </div>
+</div>
+
+
+
+

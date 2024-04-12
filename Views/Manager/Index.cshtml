@@ -1,0 +1,113 @@
+﻿@inject AppraisalManagentSystem.Interfaces.IEmployeeOperations emp;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutForHR.cshtml";
+}
+
+
+
+<div >
+<a asp-controller="Manager" asp-action="AddAppraisal"> <button type="button" class="btn" style="background-color:#4c68b1;color:white">Create Appraisal</button></a>
+
+
+    <div class="card">
+      @*   style="display:flex;justify-content:center;align-content:center;align-items:center; *@
+        <div class="card-body" style="border:2px solid #626469">
+            <h4 class="card-title">Appraisal Accepted</h4>
+        @if (ViewBag.com != null)
+        {
+            @foreach (var i in ViewBag.com)
+            {
+                    <p> <b style="color:#4C68B1";>@emp.GetEmployeeById(@i.EmployeeId)._emp_name</b> has Accepted their appraisal which was created on <b style="color:darkred">@i.StartDate</b> Appraisal ID @i.AppraisalId   </p>
+                    <a class="text-info" asp-action="ShowDetails" asp-controller="Manager" asp-route-appid="@i.AppraisalId">See details</a>
+
+                <hr />
+            }
+        }
+        else
+        {
+            <p>No Accepted Appraisal Are There..</p>
+        }
+          
+        </div> 
+        <br />
+        <hr />
+
+    </div>
+
+    <div class="card" >
+        <div class="card-body" style="border:2px solid #626469">
+             <h4 class="card-title">New Appraisal</h4>
+       @*    @if (TempData["success"] != null)
+        {
+            <p class="text-success "><b>@TempData["success"]</b> </p>
+        } *@
+            @{
+                // if (ViewBag.CreatedFlag != null)
+                // {
+                //     <p style="color:green">You have created one appraisal form..</p>
+                // }
+                // else
+
+
+
+            if (ViewBag.NewStatus != null)
+                {
+                    @foreach (var i in ViewBag.NewStatus)
+                    {
+                        <p>You have created an Appraisal form for  <b> @emp.GetEmployeeById(@i.ManagerId)._emp_name Employee ID  @i.ManagerId</b> Status is <b>@i.Status</b> on <b>@i.StartDate</b></p>
+                        <a class="text-info" asp-action="ChangeAppraisalStatus" asp-controller="Manager" asp-route-appid="@i.AppraisalId">change Status As Created</a>
+
+
+                        // <a class="text-info" asp-action="" asp-controller="" asp-route-appid="@i.AppraisalId">Change Status As Created</a>
+                        // @ViewBag.NewStatus
+                        // @emp.GetEmployeeById(4)._emp_email
+                        // @i.AppraisalId
+                    // @i.EmployeeId
+                        <hr />
+                    }
+                
+
+                // @foreach (var i in ViewBag.NewStatus)
+                // {
+                //     <p> <b> @emp.GetEmployeeById(@i.EmployeeId)._emp_name (Employee ID  @i.EmployeeId)</b> has submitted the reposnse ..  </p> 
+
+                //     <hr />
+                // }
+                
+            }else
+            
+            {
+                <p>You have not created any New appraisal form</p>
+            } 
+       }
+            
+        </div>
+    </div>
+
+    <br />
+    <hr />
+
+    <div class="card">
+        <div class="card-body" style="border:2px solid #626469">
+        <h4 class="card-title">Self Raised Appraisal</h4>
+        @{
+            if (ViewBag.selfrated != null)
+            {
+                @foreach (var i in ViewBag.selfrated)
+                {
+                    <p> <b> @emp.GetEmployeeById(@i.EmployeeId)._emp_name (Employee ID  @i.EmployeeId)</b> has Submitted their reposnse ..  </p> <a class="text-info" asp-action="ActionByManager" asp-controller="Manager" asp-route-appid="@i.AppraisalId">Review</a>
+
+                    <hr />
+                }
+            }
+            else
+            {
+                <p>No Appraisal Form Here</p>
+            }
+        }
+       
+    </div>
+</div>
+
+</div>

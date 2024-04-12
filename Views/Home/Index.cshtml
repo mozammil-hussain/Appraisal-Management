@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model LoginDetails
+
+<div class="custom-css-for-homepage" style=""
+}">
+    <div class="custom-overlay">
+<div class="">
+            <p class="display-5" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Login</p>
+           
+</div>
+
+<form asp-controller="Home" asp-action="Login" method="post" style="width:40%">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label" style="font-size:15px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="email" name="user_name" asp-for="user_name" placeholder="email" style="background-color:#e0e0e0; border-radius:inherit;border-bottom:2px solid #4c4c4c">
+      
+    </div>
+    <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" style="font-size:15px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Password</label>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i><input type="password" class="form-control" id="exampleInputPassword1" name="password" asp-for="password" placeholder="password" style="background-color:#e0e0e0; border-radius:inherit;border-bottom:2px solid #4c4c4c">
+    </div>
+
+            <button type="submit" class="btn text-success-emphasis" style="width:100%;color:white;font-weight:bolder; border-bottom:2px solid #4c4c4c; background-color:#4C68B1; border-radius:inherit;">Submit</button>
+</form>
+
+@{
+    if(ViewData["username"]== "hussainmozammil104@gmail.com")
+    {
+        <h1>@ViewData["username"]</h1>
+    }
+}
+
+    </div>
+</div>

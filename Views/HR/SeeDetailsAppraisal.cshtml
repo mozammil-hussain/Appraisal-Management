@@ -1,0 +1,135 @@
+﻿@inject AppraisalManagentSystem.Interfaces.IEmployeeOperations emp;
+@inject AppraisalManagentSystem.Interfaces.IAppraisalServices app;
+
+
+@{
+    ViewData["Title"] = "SeeDetailsAppraisal";
+}
+
+<h1>SeeDetailsAppraisal</h1>
+
+<div class="container shadow-lg mt-4 boeder border-1">
+
+
+    @{
+        if (ViewBag.fm != null)
+        {
+
+            <label class="mt-2 mx-2">Employee Name</label>
+
+
+
+            <h6 class="text-secondary mt-2 mx-2"> @emp.GetEmployeeById(ViewBag.fm.EmployeeId)._emp_name </h6>
+            <hr />
+
+
+            <label class="mt-2 mx-2">Manager Name</label>
+
+
+
+            <h6 class="text-secondary mt-2 mx-2"> @emp.GetEmployeeById(ViewBag.fm.ManagerId)._emp_name </h6>
+            <hr />
+
+
+
+            <label class="mt-2 mx-2">Objective</label>
+
+
+
+            <h6 class="text-secondary mt-2 mx-2">@ViewBag.fm.Objective</h6>
+            <hr />
+
+
+            <label class="mt-2 mx-2">Appraisal Start Date</label>
+
+
+
+            <h6 class="text-secondary mt-2 mx-2">@ViewBag.fm.StartDate</h6>
+            <hr />
+
+
+            <label class="mt-2 mx-2">Last Evaluation  Date</label>
+
+
+
+            <h6 class="text-secondary mt-2 mx-2 text-danger">@ViewBag.fm.EndDate</h6>
+            <hr />
+
+
+
+            if (ViewBag.comps != null)
+            {
+                foreach (var item in ViewBag.comps)
+                {
+
+                    <div class="row">
+
+
+                        <div class="col-sm-4">
+                            <label class="mt-2 mx-2">Compitency</label>
+
+
+
+                            <h6 class="text-secondary mt-2 mx-2 ">@app.GetCompName(@item._competency).CompetencyName </h6>
+                            <hr />
+
+
+                        </div>
+
+
+                        <div class="col-sm-4">
+                            <label class="mt-2 mx-2">Employee Comment</label>
+
+
+
+                            <h6 class="text-secondary mt-2 mx-2 "> @item._emp_comments </h6>
+                            <hr />
+
+
+
+                            <label class="mt-2 mx-2">Manager Comment</label>
+
+
+
+                            <h6 class="text-secondary mt-2 mx-2 "> @item._manager_comments </h6>
+                            <hr />
+
+
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="mt-2 mx-2">Employee Rating</label>
+
+
+
+                            <h6 class="text-secondary mt-2 mx-2 "> @item._emp_rating</h6>
+                            <hr />
+
+
+                            <label class="mt-2 mx-2">Manager Rating</label>
+
+
+
+                            <h6 class="text-secondary mt-2 mx-2 "> @item._manager_rating</h6>
+                            <hr />
+
+                        </div>
+
+                    </div>
+
+
+
+                }
+            }
+
+
+        }
+        else
+        {
+            <p>No Approval form is there...</p>
+        }
+
+       
+    }
+
+</div>

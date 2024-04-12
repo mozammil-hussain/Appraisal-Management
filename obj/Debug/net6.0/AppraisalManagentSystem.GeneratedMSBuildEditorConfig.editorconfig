@@ -1,0 +1,123 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AppraisalManagentSystem
+build_property.RootNamespace = AppraisalManagentSystem
+build_property.ProjectDir = C:\Users\mozammil.hussain\source\repos\AppraisalManagentSystem\AppraisalManagentSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mozammil.hussain\source\repos\AppraisalManagentSystem\AppraisalManagentSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Employee/CheckDetailsOfAppraisal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ2hlY2tEZXRhaWxzT2ZBcHByYWlzYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Employee/EmployeeApproval.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVBcHByb3ZhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Employee/FirstAppraisalDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRmlyc3RBcHByYWlzYWxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/HR/AddCompetencies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJcQWRkQ29tcGV0ZW5jaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/HR/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJcQWRkRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/HR/EditEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJcRWRpdEVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/HR/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/HR/SeeDetailsAppraisal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJcU2VlRGV0YWlsc0FwcHJhaXNhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Manager/ActionByManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxBY3Rpb25CeU1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Manager/AddAppraisal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxBZGRBcHByYWlzYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Manager/CreateAppraisal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxDcmVhdGVBcHByYWlzYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Manager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Manager/ShowDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxTaG93RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/Employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/_LayoutForEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/_LayoutForHR.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGb3JIUi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mozammil.hussain/source/repos/AppraisalManagentSystem/AppraisalManagentSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0kpc4ut8zt

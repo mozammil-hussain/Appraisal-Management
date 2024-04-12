@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "EditEmployee";
+}
+
+<h1 style="color:#4C68B1;font-family:Arial">Edit Employee</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+@model Employees;
+
+    @using AppraisalManagentSystem.CommonInfo;
+    
+
+
+
+    {
+        if (ViewBag.Edited != null)
+        {
+            <div class="alert alert-success">@ViewBag.Edited </div>
+        }
+        if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error </div>
+        }
+    }
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-8">
+
+                <form asp-action="EditEmployee" asp-controller="HR" method="post">
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label asp-for="_emp_name">Name</label>
+                            <input asp-for="_emp_name" class="form-control" placeholder="Name">
+                            <span asp-validation-for="_emp_name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="_emp_email">Email</label>
+                            <input asp-for="_emp_email" class="form-control" placeholder="Email">
+                            <span asp-validation-for="_emp_email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="_emp_phone">Phone</label>
+                            <input asp-for="_emp_phone" class="form-control" placeholder="Phone Number" type="number">
+                            <span asp-validation-for="_emp_phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="_designation">Designation</label>
+                            <select asp-for="_designation" asp-items="Html.GetEnumSelectList<Designation>()" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="_emp_password">Password</label>
+                            <input asp-for="_emp_password" class="form-control" placeholder="Password" type="password">
+                            <span asp-validation-for="_emp_password" class="text-danger"> </span>
+                        </div>
+                        <div class="form-group col-md-4">
+
+                            <label asp-for="_managerId">Manager ID</label>
+                            @Html.DropDownListFor(m => m._managerId, ViewBag.selectList as SelectList, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn mt-4" style="background-color:#4C68B1;color:white;font-weight:bolder;width:32%" value="submit">Save</button>
+
+                </form>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+}
+else
+{
+    <h1>You Are Not Authenticated</h1>
+}

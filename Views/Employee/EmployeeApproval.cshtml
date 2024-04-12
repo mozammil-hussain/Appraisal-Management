@@ -1,0 +1,130 @@
+﻿@inject AppraisalManagentSystem.Interfaces.IEmployeeOperations emp;
+@inject AppraisalManagentSystem.Interfaces.IAppraisalServices app;
+@{
+    ViewData["Title"] = "EmployeeApproval";
+}
+
+<h1>EmployeeApproval</h1>
+
+<div class="container border mt-3 border-1  shadow-lg">
+
+    <form asp-action="AcceptAppraisal" asp-controller="Employee" method="post" asp-route-appID="@ViewBag.fm.AppraisalId">
+
+        @{
+            if (ViewBag.fm != null)
+            {
+
+                <label class="mt-2 mx-2">Manager Name</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2"> @emp.GetEmployeeById(ViewBag.fm.ManagerId)._emp_name </h6>
+                <hr />
+
+
+
+                <label class="mt-2 mx-2">Objective</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2">@ViewBag.fm.Objective</h6>
+                <hr />
+
+
+                <label class="mt-2 mx-2">Appraisal Start Date</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2">@ViewBag.fm.StartDate</h6>
+                <hr />
+
+
+                <label class="mt-2 mx-2">Last Date</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2 text-danger">@ViewBag.fm.EndDate</h6>
+                <hr />
+
+
+
+                if (ViewBag.comps != null)
+                {
+                    foreach (var item in ViewBag.comps)
+                    {
+
+                        <div class="row">
+
+
+                            <div class="col-sm-4">
+                                <label class="mt-2 mx-2">Compitency</label>
+
+
+
+                                <h6 class="text-secondary mt-2 mx-2 ">@app.GetCompName(@item._competency).CompetencyName </h6>
+                                <hr />
+
+
+                            </div>
+
+
+                            <div class="col-sm-4">
+                                <label class="mt-2 mx-2">Your Comment</label>
+
+
+
+                                <h6 class="text-secondary mt-2 mx-2 "> @item._emp_comments </h6>
+                                <hr />
+
+
+
+                                <label class="mt-2 mx-2">Manager Comment</label>
+
+
+
+                                <h6 class="text-secondary mt-2 mx-2 "> @item._manager_comments </h6>
+                                <hr />
+
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="mt-2 mx-2">Your Rating</label>
+
+
+
+                                <h6 class="text-secondary mt-2 mx-2 "> @item._emp_rating</h6>
+                                <hr />
+
+
+                                <label class="mt-2 mx-2">Manager Rating</label>
+
+
+
+                                <h6 class="text-secondary mt-2 mx-2 "> @item._manager_rating</h6>
+                                <hr />
+
+                            </div>
+
+                        </div>
+
+
+
+                    }
+                }
+                <input type="submit" value="Accept Appraisal" class="btn mb-4" style="background-color:#4C68B1;color:white;">
+
+            }
+            else
+            {
+                <p>No Approval form is there...</p>
+            }
+        }
+
+
+
+    </form>
+
+
+</div>
+

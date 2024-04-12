@@ -1,0 +1,171 @@
+﻿
+
+@model List<AppraisalManagentSystem.Models.Employees>;
+@inject AppraisalManagentSystem.Interfaces.IAppraisalServices app
+@inject AppraisalManagentSystem.Interfaces.IEmployeeOperations emp
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutForHR.cshtml";
+}
+
+
+
+<div>
+    <a asp-controller="HR" asp-action="AddEmployee"><button type="submit" class="mt-3 p-3 mb-2" style="background-color:#4C68B1;color:white;border-radius:3px;">Add Emplpoyee</button></a>
+</div>
+<div>
+    <a asp-controller="HR" asp-action="AddCompetencies"><button type="submit" class="mt-3 p-3 mb-2" style="background-color:#4C68B1;color:white;border-radius:3px;">Add Competencies</button></a>
+</div>
+
+
+
+@* <div>
+    <select class="form-select mt-3" aria-label="Disabled select example" style="width:30%">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+
+</div> *@
+
+
+@* Adding Employee Details Here *@
+
+
+
+
+
+
+
+<h3>List of All Employees</h3>
+
+<table class="table table-secondary table-striped" style="display:block;">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Designation</th>
+            <th>Manager ID</th>
+            <th>Action</th>
+            <th>Action</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            foreach (var item in ViewBag.emps)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item._emp_name</td>
+                    <td>@item._emp_email</td>
+                    
+                    <td>@item._emp_phone</td>
+                    <td>@item._designation</td>
+                    <td>@item._managerId</td>
+                    <td><a asp-action="EditEmployee" asp-route-EmpId="@item.Id"> <button type="button" class="btn" style="background-color:#4C68B1;color:white;border-radius:3px;">Edit</button>    </a></td>
+
+                    <td><a asp-action="DeleteEmployeeById" asp-route-EmployeeID="@item.Id"> <button type="button" class="btn" style="background-color:#4C68B1;color:white;border-radius:3px;">Delete</button>    </a></td>
+
+
+
+
+
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+<h3>List of Employees Who has Accepted their Appraisals </h3>
+
+<table class="table table-secondary table-striped" style="display:block;width:100%;">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Manager Id</th>
+            <th>Manager Name</th>
+            <th>Details</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+
+     @{
+            foreach (var item in ViewBag.CompletedApprsailForm)
+        {
+            <tr>
+                    <td>@item.EmployeeId</td>
+                    <td>@emp.GetEmployeeById(item.EmployeeId)._emp_name</td>
+                    <td>@emp.GetEmployeeById(item.EmployeeId)._emp_email</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.ManagerId</td>
+                    <td>@emp.GetEmployeeById(@item.ManagerId)._emp_name</td>
+                    <td> <a asp-action="SeeDetailsAppraisal" asp-controller="HR" asp-route-aid="@item.AppraisalId">See Details</a>  </td>
+                   
+
+            </tr>
+        }
+      }
+       </tbody>
+</table>
+
+<h3>Competencies List</h3>
+
+<table class="table table-secondary table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Competency ID</th>
+            <th scope="col">Competency Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        @{
+            
+        
+            foreach (var i in ViewBag.comm)
+            {
+            <tr>      
+            <td>@i.ID</td>
+            <td>@i.CompetencyName</td>
+            <td>@i.TypeC</td>
+                    <td>      <a asp-action="DeleteCompetency" asp-route-CompId="@i.ID"> <button type="button" class="btn" style="background-color:#4C68B1;color:white;border-radius:3px;">Delete</button>    </a></td>
+          </tr>
+        
+        }
+            
+        }
+    </tbody>
+</table>
+
+
+
+
+
+       
+            @*     <h1>@item.Id</h1
+                <h1>@item._emp_name</h1>
+                <h1>@item._emp_email</h1>
+                <h1>@item._emp_phone</h1>
+                <h1>@item._emp_password</h1>
+         *@
+
+ 
+        
+ 

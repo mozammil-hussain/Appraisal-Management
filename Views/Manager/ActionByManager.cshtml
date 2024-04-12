@@ -1,0 +1,132 @@
+﻿@model AppraisalManagentSystem.Models.Appraisal
+@inject AppraisalManagentSystem.Interfaces.IEmployeeOperations emp;
+@inject AppraisalManagentSystem.Interfaces.IAppraisalServices app;
+@{
+    ViewData["Title"] = "ActionByManager";
+}
+
+<div class="container text-center display-6" style="color:blue">Review By Manager</div>
+
+<h1>Action By Manager</h1>
+
+<div class=" container border border-1 mt-4 shadow-lg">
+
+    @{
+        @if (ViewBag.Error != null)
+        {
+            <div class="container alert alert-danger">  @ViewBag.ErrorMsg </div>
+        }
+
+        if (ViewBag.app != null)
+        {
+            <h1></h1>
+            // <h1>@ViewBag.app</h1>
+            <form asp-action="ActionByManager" asp-controller="Manager" asp-route-appid="@ViewBag.app.AppraisalId" method="post">
+
+                <label class="mt-2 mx-2">Employee Name</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2">@emp.GetEmployeeById(ViewBag.app.EmployeeId)._emp_name </h6>
+            
+
+
+
+                <label class="mt-2 mx-2">Employee ID</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2"> Employee ID @ViewBag.app.EmployeeId</h6>
+             
+
+
+                <label class="mt-2 mx-2">Objective</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2">@ViewBag.app.Objective</h6>
+              
+
+                <label class="mt-2 mx-2">Appraisal Start Date</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2">@ViewBag.app.StartDate</h6>
+                
+                <label class="mt-2 mx-2" style="color:darkred">Last  Date</label>
+
+
+
+                <h6 class="text-secondary mt-2 mx-2 text-danger">@ViewBag.app.EndDate</h6>
+                <hr style="color:black" />
+
+
+
+
+
+                @if (ViewBag.comps != null)
+                {
+
+                    foreach (var i in ViewBag.comps)
+                    {
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="mt-2 mx-2">Compitence</label>
+
+                                <h6 class="text-secondary mt-2 mx-2"> @app.GetCompName(@i._competency).CompetencyName </h6>     
+                            </div>
+                            <div class="col-sm-4">
+
+                                <label class="mt-2 mx-2">Employee Comment</label>
+                                <h6 class="text-secondary mt-2 mx-2"> @i._emp_comments </h6>
+                                <hr>
+                                <label class="mt-2 mx-2">Your Comment</label>
+
+                                <input type="text" class="form-control mc" required asp-for="MComments">
+                                <span class="text-danger" asp-validation-for="MComments"></span>
+
+                            </div>
+
+
+
+
+                            <div class="col-sm-4">
+
+
+
+                                <label class="mt-2 mx-2">Employee Rating</label>
+                                <h6 class="text-secondary mt-2 mx-2"> @i._emp_rating </h6>
+                                <hr>
+                                <label class="mt-2 mx-2">Rate Employee</label>
+                                <select class="form-control" asp-for="MRating" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+
+
+                            </div>
+
+
+                        </div>
+                        <hr />
+                    }
+
+
+                    <input type="submit" value="submit" class=" mb-3 mt-3 btn" style="width:40%;background-color:#4c68b1;color:white;font-weight:bolder;border:inset;margin-left:340px">
+                }
+
+
+            </form>
+
+        }
+        else
+        {
+            <p> No appraisal Form Exist</p>
+        }
+    }
+
+
+</div>

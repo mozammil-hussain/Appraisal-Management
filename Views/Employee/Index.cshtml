@@ -1,0 +1,109 @@
+﻿@inject AppraisalManagentSystem.Interfaces.IEmployeeOperations emp
+@inject AppraisalManagentSystem.Interfaces.IAppraisalServices app
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutForEmployee.cshtml";
+
+    
+}
+
+
+
+
+
+@{
+    @if (TempData["success"] !=null)
+    {
+        <div class="container alert alert-success">@TempData["success"]</div>
+    }
+}
+
+@model AppraisalManagentSystem.Models.Employees 
+<div class="container mt-4" >
+    <h2>Welcome - <a style="color:#4C68B1">@User.Identity.Name</a> Your Appraisal Details </h2>
+
+    <div class="row">
+
+        <div class="col-sm-4 border border-top alert" style="background-color:black;color:white">
+            <h5>Previous Appraisal</h5>
+         @*    <h1>@ViewBag.EmpDetails</h1> *@
+
+            @{
+                if (ViewBag.ca !=null)
+                {
+                    
+
+                  foreach (var item in ViewBag.ca)
+                    {
+                        // @emp.GetEmployeeById(@item.EmployeeId)._emp_name
+                        // <p>@ViewBag.ca</p>
+                        <p> <b>@User.Identity.Name (Employee ID @item.EmployeeId)</b>  You have accepted the Appraisal form Which was <b>created on @item.StartDate</b>. Appraisal Id @item.AppraisalId <a class="text-info" asp-action="CheckDetailsOfAppraisal" asp-controller="Employee" asp-route-appID="@item.AppraisalId">See Details</a>   </p>
+                   <hr />
+                    
+                    }
+
+
+
+                }
+                else
+                {
+                    <p>Appraisal Does not Exist</p>
+                }
+            }
+
+
+        </div>
+
+        <div class="col-sm-4 border border-bottom alert" style="background-color:aquamarine;color:black">
+            <h5>Pending Appraisal</h5>
+            @if( ViewBag.final !=null)
+            {
+                foreach (var item in ViewBag.final)
+                {
+                  @*   @emp.GetEmployeeById(@item.EmployeeId)._emp_name *@
+                   @*  <h1>@ViewBag.final</h1>
+                    <p> @item.EmployeeId</p> *@
+
+                    <p> Hey, <b>@User.Identity.Name Employee ID</b>  @item.EmployeeId,  Your <b>manager</b> Has submmited his response..</p> <a class="text-info" asp-action="EmployeeApproval" asp-controller="Employee" asp-route-appID="@item.AppraisalId">See Details</a>
+                    <hr />
+                }
+
+            }
+            else
+            {
+                <p>Appraisal Does not Exist</p>
+            }
+
+        </div>
+
+        <div class="col-sm-4 border border-top-1 alert" style="background-color:beige;color:black">
+
+            <h5>Latest Activity</h5>
+
+            @{
+                if(ViewBag.status != null)
+                {
+                    foreach (var item in ViewBag.status)
+                    {
+
+
+                        <p> Hey, There is new appraisal form for you. <b>created on @item.StartDate.. </b> <a class="text-info" asp-action="FirstAppraisalDetail" asp-controller="Employee" asp-route-appID="@item.AppraisalId">Click here to check..</a>   </p>
+                        <hr />
+                    }
+
+                }
+                else
+                {
+                    <p>Appraisal Does not Exist</p>
+                }
+            }
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>

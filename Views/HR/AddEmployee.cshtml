@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+
+<h1 style="color:#4C68B1">Add Employee</h1>
+<hr />
+
+
+@model Employees
+<form class="row g-3" asp-controller="HR" asp-action="SaveEmployee" method="post">
+ @*    <div class="col-md-6">
+        <label for="inputEmail4" asp-for="_" class="form-label">Employee ID</label>
+        <input type="number" asp-for="_empId" class="form-control" name="_empId" id="inputId">
+    </div> *@
+    
+    <div class="col-md-6">
+        <label for="inputPassword4" asp-for="_emp_name" class="form-label">Employee Name</label>
+        <input type="text" class="form-control" asp-for="_emp_name" name="_emp_name" id="inputName">
+    </div>
+    <div class="col-md-12">
+        @{
+            @if (TempData["UnableToAdd"]!=null)
+            {
+                <p style="color:red;">@TempData["UnableToAdd"]</p>
+            }
+        }
+        <label for="inputAddress" class="form-label" asp-for="_emp_email">Email</label>
+        <input type="email" class="form-control" asp-for="_emp_email" name="_emp_email" id="inputAddress" placeholder="email">
+    </div>
+    <div class="col-md-12">
+        <label for="inputAddress" class="form-label" asp-for="_emp_password">Email</label>
+        <input type="password" class="form-control" asp-for="_emp_password" name="_emp_password" id="inputAddress" placeholder="password">
+        
+        @{
+            if (@ViewBag.Pattern!=null)
+            {
+                <p style="color:darkred">@ViewBag.Pattern eg.. Husssain@6856</p>
+            }
+        }
+       @*  @{
+            if (ViewBag.Patten != null)
+            {
+                <p>password is weak try with strong password </p>
+            }
+        } *@
+    </div>
+    <div class="col-12">
+        <label for="inputAddress2" class="form-label" asp-for="_emp_phone">Phone</label>
+        <input type="text" class="form-control" asp-for="_emp_phone" name="_emp_phone" id="inputAddress2" placeholder="eg. 91 124398r">
+    </div>
+    <div class="col-md-6">
+        <label for="inputCity" class="form-label" asp-for="_designation">Designation</label>
+        <input type="text" class="form-control" asp-for="_designation" name="_designation" id="inputCity">
+    </div>
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label" asp-for="_managerId">Manager ID</label>
+        <input type="number" class="form-control" asp-for="_managerId" name="_managerId" id="inputId">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn" style="background-color:#4C68B1;color:white;width:30%; border:inset;font-weight:bolder">Save</button>
+    </div>
+</form>

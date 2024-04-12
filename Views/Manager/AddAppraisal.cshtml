@@ -1,0 +1,76 @@
+﻿@model AppraisalManagentSystem.Models.AppraisalStatus
+
+@{
+    ViewData["Title"] = "AddAppraisal";
+}
+
+<h1>AddAppraisal</h1>
+
+<h4>AppraisalStatus</h4>
+<hr />
+<div class="row">
+    @{
+        if (ViewBag.Success != null)
+        {
+            <div class="container alert alert-success">
+                @ViewBag.Success
+            </div>
+        }
+    }
+
+
+    <div class="col-md-4">
+        <form asp-action="AddAppraisal" asp-controller="Manager" method="post" asp-route-data="">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h1></h1>
+            
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                
+               @*  <span asp-validation-for="EmployeeId" class="text-danger"></span> *@
+                @Html.DropDownListFor(m => m.EmployeeId, ViewBag.selectList as SelectList, new { @class = "form-control" })
+
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ManagerId" class="control-label"></label>
+                <input asp-for="ManagerId" class="form-control" />
+                <span asp-validation-for="ManagerId" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+
+                <label asp-for="tempCompetency"></label>
+                <select asp-for="tempCompetency" asp-items="@ViewBag.compitency" class="form-control form-select-lg" multiple></select>
+                <span asp-validation-for="tempCompetency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input type="hidden" asp-for="Status" class="form-control" value="New"/>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Objective" class="control-label"></label>
+                <input asp-for="Objective" class="form-control" />
+                <span asp-validation-for="Objective" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn" style="background-color:#4C68B1;color:white"; />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
